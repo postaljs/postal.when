@@ -1,6 +1,7 @@
 var ForkJoin = function ( queue, onSuccess, onError, options ) {
 	var self = this,
-		_onError = (Object.prototype.toString.call( onError ) === "[object Function]") ? onError : function() { },
+		_onError = (Object.prototype.toString.call( onError ) === "[object Function]") ? onError : function () {
+		},
 		_options = (Object.prototype.toString.call( onError ) === "[object Object]") ? onError : options || {},
 		_subscriptions = [],
 		_timeoutFn,
