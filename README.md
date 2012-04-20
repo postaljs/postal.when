@@ -6,11 +6,22 @@ postal.when is a plugin for [postal.js](https://github.com/ifandelse/postal.js) 
 With postal.when, you specify the channe/topics you want to wait on, and then a callback that will be invoked once *all* the messages have arrived.  The default behavior is for the "when" to be reset once it fires, allowing another round of the messages to be received until the callback is invoked again - but it can be forced to run only once.
 
 ```javascript
-// channelDefs is an array of object literals which specify channel and topic
-// callback is the function to be invoked once all the messages have arrived
-// (note: callback will receive the data from each individual subscription, as args, in order)
-// options - currently the only option is { once : true } (this arg is optional)
-postal.when(channelDefs, callback, [options]);
+/* channelDefs - is an array of object literals which specify channel and topic
+   onSuccess   - invoked once all the messages have successfully arrived
+				 (note: onSuccess will receive the data from each individual subscription, as args, in order)
+   onError     - [optional] - invoked if the operation fails (currently only a timeout fails the operation)
+   options     - [optional] - can provide the following:
+				 {
+					once: true,     // if true, the 'fork/join" process is only run once
+									// and not reset afterwards to run again
+					timeout: 2000,  // a timeout value in milliseconds.  It fires the onError
+									// callback if the timeout occurs before all messages have arrived
+				 }
+*/
+postal.when(channelDefs, onSuccess, onError, options);
+postal.when(channelDefs, onSuccess, options);
+postal.when(channelDefs, onSuccess, onError);
+postal.when(channelDefs, onSuccess);
 ```
 
 Here's a quick usage example:
