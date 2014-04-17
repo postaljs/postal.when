@@ -1,0 +1,24 @@
+{
+    "name": "postal.when",
+    "repo": "postaljs/postal.when",
+    "description": "A postal.js add-on enabling an aggregated response to a group of messages.",
+    "version": "0.2.0",
+    "keywords": [
+        "pub/sub",
+        "pub",
+        "sub",
+        "messaging",
+        "message",
+        "bus",
+        "event",
+        "eventing",
+        "mediator",
+        "broker",
+        "envelope"
+    ],
+    "dependencies": {
+        "component/underscore": "*"
+    },
+    "scripts": ["lib/postal.when.min.js", "lib/postal.when.js"],
+    "license": "MIT"
+}

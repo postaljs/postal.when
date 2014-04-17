@@ -1,12 +1,22 @@
-//import("VersionHeader.js");
-(function ( root, doc, factory ) {
-	if ( typeof define === "function" && define.amd ) {
+/*jshint -W098 */
+(function ( root, factory ) {
+	if ( typeof module === "object" && module.exports ) {
+		// Node, or CommonJS-Like environments
+		module.exports = function( postal ) {
+			return factory( require( "underscore" ), postal , this );
+		}
+	} else if ( typeof define === "function" && define.amd ) {
+		// AMD. Register as an anonymous module.
 		define( ["underscore", "postal"], function ( _, postal ) {
-			return factory( _, postal, root, doc );
+			return factory( _, postal, root );
 		} );
 	} else {
-		factory( root._, root.postal, root, doc );
+		// Browser globals
+		root.postal = factory( root._, root.postal, root );
 	}
-}( this, document, function ( _, postal, global, document, undefined ) {
+}( this, function ( _, postal, global, undefined ) {
+
 	//import("when.js");
-} ));
+
+	return postal;
+}));

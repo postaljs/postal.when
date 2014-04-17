@@ -1,13 +1,19 @@
 require.config( {
 	paths : {
-		underscore  : 'libs/underscore/underscore-min',
-		postal      : 'libs/postal/postal',
-		postaldiags : 'libs/postal/postal.diagnostics',
-		jquery      : 'libs/jquery/jquery-min'
+		underscore    : '../../../bower/underscore/underscore',
+		postal        : '../../../bower/postal.js/lib/postal',
+		postaldiags   : '../../../bower/postal.diagnostics/lib/postal.diagnostics',
+		jquery        : '../../../bower/jquery/jquery',
+		'postal.when' : '../../../lib/postal.when'
+	},
+	shim: {
+		underscore : {
+			exports: "_"
+		}
 	}
-} );
+});
 
-require( ['jquery', 'underscore', 'postal.when'], function ( $, _ ) {
+require( ['jquery', 'underscore', 'postal', 'postal.when'], function ( $, _, postal ) {
 	$( function () {
 		postal.when( [
 			{ channel : "ChannelA", topic : "topic.on.channel.a" },

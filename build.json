@@ -1,8 +1,0 @@
-{
-    "source": "src",
-    "output": "lib/browser",
-    "lint": {},
-    "uglify": {},
-    "gzip": {},
-    "extensions": { "uglify": "min", "gzip": "gz" }
-}
