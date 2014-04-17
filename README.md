@@ -45,12 +45,12 @@ postal.publish( { channel: "ChannelC", topic: "topic.on.channel.c", data: "Via m
 ```
 
 ## How to Include It
-For browsers (build is in ./lib/browser), postal.when will work in both standard and AMD/require.js environments.  Simply include it in your project (after underscore and postal, if you're not using AMD), and it will automatically add the "when" member to postal's global object.
+postal.when will work in both standard and AMD/require.js environments as well as node.js.  Simply include it in your project (after underscore and postal, if you're not using AMD), and it will automatically add the "when" method to postal's global object.
 
-For node.js, (build is in ./lib/node), you should require the module and pass in the references to underscore and postal:
+For node.js, postal.when returns a factory function which you should invoke and pass in the reference to postal:
 
 ```javascript
 // this is assuming underscore and postal have been required above somewhere...
-var postalWhen = require("path/to/postal/when");
-postalWhen(_, postal);
+var postal = require("postal");
+var postalWhen = require("path/to/postal/when")(postal);
 ```
