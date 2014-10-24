@@ -1,6 +1,6 @@
 /* global describe, postal, it, after, before, expect */
 (function(global) {
-    var postal = typeof window === "undefined" ? require("../bower/postal.js/lib/postal.js") : window.postal;
+    var postal = typeof window === "undefined" ? require("postal") : window.postal;
     var expect = typeof window === "undefined" ? require("expect.js") : window.expect;
     var _ = typeof window === "undefined" ? require("underscore") : window._;
     var postalWhen = typeof window === "undefined" ? require("../lib/postal.when.js")(postal) : window.postal;
