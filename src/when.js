@@ -41,6 +41,10 @@ var ForkJoin = function ( queue, onSuccess, onError, options ) {
 	};
 
 	_.each( queue, function ( sub ) {
+		// Add no-op callback for subscriptions with undefined callbacks.
+		if (!sub.callback) {
+			sub.callback = function () {};
+		}
 		var subscriptionDefinition = postal.subscribe( sub );
 		subscriptionDefinition.data = undefined;
 		subscriptionDefinition.subscribe( function ( data ) {
