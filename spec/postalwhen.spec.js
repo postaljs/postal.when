@@ -3,7 +3,7 @@
     var postal = typeof window === "undefined" ? require("../bower/postal.js/lib/postal.js") : window.postal;
     var expect = typeof window === "undefined" ? require("expect.js") : window.expect;
     var _ = typeof window === "undefined" ? require("underscore") : window._;
-    var postalWhen = typeof window === "undefinde" ? require("../lib/postal.when.js")(postal) : window.postal;
+    var postalWhen = typeof window === "undefined" ? require("../lib/postal.when.js")(postal) : window.postal;
     var subscription;
     var sub;
     var channel;
