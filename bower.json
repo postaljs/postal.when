@@ -21,12 +21,9 @@
     "type": "git",
     "url": "git://github.com/postaljs/postal.when.git"
   },
-  "main": [
-    "lib/postal.when.min.js",
-    "lib/postal.when.js"
-  ],
+  "main": "lib/postal.when.js",
   "dependencies": {
-    "underscore": "~1.5.2"
+    "lodash": "~3.5.0"
   },
   "devDependencies": {
     "jquery": "~1.10.2",
@@ -38,6 +35,6 @@
     "postal.diagnostics": "~0.7.0"
   },
   "resolutions": {
-    "underscore": "~1.5.2"
+    "lodash": "~3.5.0"
   }
 }
